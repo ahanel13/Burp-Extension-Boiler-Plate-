@@ -1,2 +1,3 @@
-# Burp-Extension-Boiler-Plate-
-This extension setups listeners, scanchecks, insertion points, etc... But does nothing. This is intended to help other start writing extensions without requiring all of the setup.
+# Burp Extension Boilerplate
+This extension setups listeners, insertion points, passive and active scan checks, etc... But does nothing. 
+This is intended to help testers start writing extensions without requiring all the setup.
