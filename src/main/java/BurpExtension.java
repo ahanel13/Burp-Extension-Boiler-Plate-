@@ -6,6 +6,7 @@ import model.proxy.CustomProxyResponseHandler;
 import model.proxy.CustomWebSocketCreationHandler;
 import model.scanner.CustomInsertionPointProvider;
 import model.scanner.CustomScanCheck;
+import view.CustomSuiteTab;
 import view.MenuProvider;
 
 ////////////////////////////////////////
@@ -24,6 +25,7 @@ public void initialize(MontoyaApi montoyaApi) {
   
   _api                   = montoyaApi;
   _menuContext           = new MenuProvider();
+  _view                  = new CustomSuiteTab();
   _contextMenuController = new MenuItemController(_menuContext);
   
   _registerUnloader();
@@ -31,8 +33,13 @@ public void initialize(MontoyaApi montoyaApi) {
   _registerProxyClasses();
   _registerScanChecks();
   _registerInsertionPntProvider();
+  _registerSuiteTab();
   
   _api.logging().logToOutput("Extension Enabled");
+}
+
+private void _registerSuiteTab(){
+  _api.userInterface().registerSuiteTab(_EXT_NAME, _view);
 }
 
 ////////////////////////////////////////
@@ -43,6 +50,7 @@ private static final String _EXT_NAME = "Boiler Plate";
 private MontoyaApi         _api;
 private MenuProvider       _menuContext;
 private MenuItemController _contextMenuController;
+private CustomSuiteTab     _view;
 
 ////////////////////////////////////////
 // PRIVATE METHODS
