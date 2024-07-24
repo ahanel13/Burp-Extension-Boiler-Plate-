@@ -21,12 +21,12 @@ public class BurpExtension implements burp.api.montoya.BurpExtension{
 //-----------------------------------------------------------------------------
 @Override
 public void initialize(MontoyaApi montoyaApi) {
-  _api.logging().logToOutput("Enabling Extension");
-  
   _api                   = montoyaApi;
   _menuContext           = new MenuProvider();
   _view                  = new CustomSuiteTab();
   _contextMenuController = new MenuItemController(_menuContext);
+  
+  _api.logging().logToOutput("Enabling Extension");
   
   _registerUnloader();
   _setExtensionName();
