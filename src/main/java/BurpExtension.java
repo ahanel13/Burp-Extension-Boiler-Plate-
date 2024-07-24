@@ -1,5 +1,6 @@
 import burp.api.montoya.MontoyaApi;
 import burp.api.montoya.extension.ExtensionUnloadingHandler;
+import controller.MenuItemController;
 import model.proxy.CustomProxyRequestHandler;
 import model.proxy.CustomProxyResponseHandler;
 import model.proxy.CustomWebSocketCreationHandler;
@@ -21,9 +22,9 @@ public class BurpExtension implements burp.api.montoya.BurpExtension{
 public void initialize(MontoyaApi montoyaApi) {
   _api.logging().logToOutput("Enabling Extension");
   
-  _api             = montoyaApi;
-  _menuContext     = new MenuProvider();
-  
+  _api                   = montoyaApi;
+  _menuContext           = new MenuProvider();
+  _contextMenuController = new MenuItemController(_menuContext);
   
   _registerUnloader();
   _setExtensionName();
@@ -39,8 +40,9 @@ public void initialize(MontoyaApi montoyaApi) {
 ////////////////////////////////////////
 private static final String _EXT_NAME = "Boiler Plate";
 
-private MontoyaApi   _api;
-private MenuProvider _menuContext;
+private MontoyaApi         _api;
+private MenuProvider       _menuContext;
+private MenuItemController _contextMenuController;
 
 ////////////////////////////////////////
 // PRIVATE METHODS
