@@ -14,13 +14,13 @@ public class CustomProxyResponseHandler implements ProxyResponseHandler{
 //-----------------------------------------------------------------------------
 @Override
 public ProxyResponseReceivedAction handleResponseReceived(InterceptedResponse interceptedResponse){
-  return null;
+  return ProxyResponseReceivedAction.continueWith(interceptedResponse);
 }
 
 //-----------------------------------------------------------------------------
 @Override
 public ProxyResponseToBeSentAction handleResponseToBeSent(InterceptedResponse interceptedResponse){
-  return null;
+  return ProxyResponseToBeSentAction.continueWith(interceptedResponse);
 }
 
 
