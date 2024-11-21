@@ -14,11 +14,11 @@ import view.MenuProvider;
 // CLASS CustomBurpExtension
 ////////////////////////////////////////
 /**
- * The <code>CustomBurpExtension</code> class implements the {@link burp.api.montoya.BurpExtension BurpExtension}
+ * <p>The <code>CustomBurpExtension</code> class implements the {@link burp.api.montoya.BurpExtension BurpExtension}
  * interface and serves as the main entry point for the Burp Suite extension. This class
  * is responsible for initializing and setting up various components of the extension,
- * including menu providers, custom suite tabs, proxy handlers, scan checks, and insertion point providers.<br>
- * <br>
+ * including menu providers, custom suite tabs, proxy handlers, scan checks, and insertion point providers.</p>
+ *
  * <p>When the extension is loaded by Burp Suite, the <code>initialize(MontoyaApi)</code> method is called, which sets up the extension by registering
  * various handlers and components with the Montoya API.</p>
  *
@@ -145,13 +145,13 @@ private void _registerScanChecks(){
 
 //-----------------------------------------------------------------------------
 /**
- * Registers a custom {@link burp.api.montoya.scanner.audit.insertionpoint.AuditInsertionPointProvider AuditInsertionPointProvider}
+ * <p>Registers a custom {@link burp.api.montoya.scanner.audit.insertionpoint.AuditInsertionPointProvider AuditInsertionPointProvider}
  * with the Burp Suite. This allows the extension to define custom locations within
- * HTTP requests where payloads can be inserted during scanning.<br>
- * <br>
- * Custom insertion points are useful for targeting specific parts of
- * requests that are not covered by Burp Suite's built-in insertion points.
- * See also {@link burp.api.montoya.scanner.audit.insertionpoint.AuditInsertionPoint AuditInsertionPoint}.
+ * HTTP requests where payloads can be inserted during scanning.</p>
+ *
+ * <p>Custom insertion points are useful for targeting specific parts of
+ * requests that are not covered by Burp Suite's built-in insertion points.</p>
+ * @see burp.api.montoya.scanner.audit.insertionpoint.AuditInsertionPoint
  */
 private void _registerInsertionPntProvider(){
   CustomInsertionPointProvider provider = new CustomInsertionPointProvider();
